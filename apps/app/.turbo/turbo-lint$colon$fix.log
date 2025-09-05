@@ -1,0 +1,5 @@
+
+> lint:fix
+> next lint --fix
+
+✔ No ESLint warnings or errors
