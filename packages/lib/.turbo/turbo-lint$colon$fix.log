@@ -1,0 +1,4 @@
+
+> @elan/lib@0.0.0 lint:fix
+> eslint --fix .
+
