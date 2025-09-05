@@ -1,0 +1,12 @@
+
+> @elan/lib@0.0.0 prettier:fix
+> prettier --write "src/**/*.{js,jsx,ts,tsx}"
+
+src/cjs/chunk.ts 103ms (unchanged)
+src/cjs/index.ts 6ms (unchanged)
+src/cjs/logger.ts 101ms (unchanged)
+src/cjs/task.ts 111ms (unchanged)
+src/esm/chunk.ts 7ms (unchanged)
+src/esm/index.ts 2ms (unchanged)
+src/esm/logger.ts 51ms (unchanged)
+src/esm/task.ts 34ms (unchanged)

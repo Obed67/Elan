@@ -1,0 +1,18 @@
+
+> prettier:fix
+> prettier --write "**/*.{js,jsx,ts,tsx}"
+
+.eslintrc.js 65ms (unchanged)
+depcheck-test.ts 191ms
+init/coding-env.ts 6ms (unchanged)
+init/complete-initialisation.ts 12ms (unchanged)
+init/db-setup.ts 16ms (unchanged)
+init/env-setup.ts 35ms (unchanged)
+init/init-build.ts 5ms (unchanged)
+init/init-env.ts 4ms (unchanged)
+init/init.ts 12ms (unchanged)
+init/modules-selection.ts 105ms
+init/packages-selection.ts 18ms (unchanged)
+init/replace-tokens.ts 22ms (unchanged)
+init/utils/cmd.ts 14ms (unchanged)
+init/utils/path.ts 4ms (unchanged)

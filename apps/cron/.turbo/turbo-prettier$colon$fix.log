@@ -1,0 +1,9 @@
+
+> prettier:fix
+> prettier --write "**/*.{js,jsx,ts,tsx}"
+
+src/cron/clear-unused-uploads/index.ts 187ms (unchanged)
+src/cron/sample/index.ts 13ms (unchanged)
+src/lib/env.ts 17ms (unchanged)
+src/lib/prisma.ts 5ms (unchanged)
+src/lib/s3.ts 7ms (unchanged)

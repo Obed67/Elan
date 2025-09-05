@@ -1,0 +1,18 @@
+
+> @elan/transactional@1.0.0 prettier:fix
+> prettier --write "**/*.{js,jsx,ts,tsx}"
+
+.eslintrc.js 335ms (unchanged)
+components/body.tsx 49ms (unchanged)
+components/button.tsx 16ms (unchanged)
+components/card.tsx 12ms (unchanged)
+components/container.tsx 12ms (unchanged)
+components/footer.tsx 29ms (unchanged)
+components/header.tsx 13ms (unchanged)
+components/hey-text.tsx 14ms (unchanged)
+components/link.tsx 19ms (unchanged)
+constants.ts 15ms (unchanged)
+emails/change-email-otp.tsx 92ms (unchanged)
+emails/reset-password.tsx 19ms (unchanged)
+emails/verify-email.tsx 20ms (unchanged)
+prettier.config.js 6ms (unchanged)
