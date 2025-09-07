@@ -46,13 +46,22 @@
     "projectDescription": {
       "max500": "Project description must be at most 500 characters long."
     },
+    "taskTitle": {
+      "required": "Task title is required",
+      "min3": "Task title must be at least 3 characters long.",
+      "max100": "Task title must be at most 100 characters long."
+    },
+    "taskDescription": {
+      "max1000": "Task description must be at most 1000 characters long."
+    },
     "projectNameAlreadyExists": "A project with this name already exists.",
     "projectNotFound": "Project not found.",
     "userNotFound": "User not found.",
     "userAlreadyMember": "User is already a member of this project.",
     "userNotMember": "User is not a member of this project.",
     "cannotRemoveOwner": "Cannot remove the project owner.",
-    "cannotModifyOwner": "Cannot modify the project owner's role."
+    "cannotModifyOwner": "Cannot modify the project owner's role.",
+    "taskNotFound": "Task not found."
   },
   "home": "Home",
   "homePage": {
