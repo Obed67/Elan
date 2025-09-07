@@ -49,7 +49,10 @@ export const projectsRouter = router({
     .mutation(deleteProject),
 
   // ===== PROJECT MEMBERS =====
-  inviteUser: authenticatedProcedure.input(inviteUserSchema()).output(inviteUserResponseSchema()).mutation(inviteUser),
+  inviteUser: authenticatedProcedure
+    .input(inviteUserSchema())
+    .output(inviteUserResponseSchema())
+    .mutation(inviteUser),
 
   removeMember: authenticatedProcedure
     .input(removeMemberSchema())
