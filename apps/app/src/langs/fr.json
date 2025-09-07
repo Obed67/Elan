@@ -37,7 +37,22 @@
     "otpInvalid": "Code OTP invalide.",
     "emailNotVerified": "Veuillez vérifier votre email.",
     "fileTooLarge": "Le fichier est trop volumineux.",
-    "passwordsDoNotMatch": "Les mots de passe ne correspondent pas."
+    "passwordsDoNotMatch": "Les mots de passe ne correspondent pas.",
+    "projectName": {
+      "required": "Nom du projet requis",
+      "min3": "Le nom du projet doit être d'au moins 3 caractères.",
+      "max50": "Le nom du projet doit être d'au maximum 50 caractères."
+    },
+    "projectDescription": {
+      "max500": "La description du projet doit être d'au maximum 500 caractères."
+    },
+    "projectNameAlreadyExists": "Un projet avec ce nom existe déjà.",
+    "projectNotFound": "Projet non trouvé.",
+    "userNotFound": "Utilisateur non trouvé.",
+    "userAlreadyMember": "L'utilisateur est déjà membre de ce projet.",
+    "userNotMember": "L'utilisateur n'est pas membre de ce projet.",
+    "cannotRemoveOwner": "Impossible de supprimer le propriétaire du projet.",
+    "cannotModifyOwner": "Impossible de modifier le rôle du propriétaire."
   },
   "home": "Accueil",
   "homePage": {

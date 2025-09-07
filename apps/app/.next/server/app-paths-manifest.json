@@ -1,6 +1,3 @@
 {
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js",
-  "/[lang]/(not-protected)/page": "app/[lang]/(not-protected)/page.js",
-  "/[lang]/(protected)/examples/profile/page": "app/[lang]/(protected)/examples/profile/page.js"
+  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js"
 }
