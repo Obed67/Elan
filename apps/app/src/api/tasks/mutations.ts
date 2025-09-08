@@ -13,8 +13,6 @@ import {
 import { prisma } from "@/lib/prisma"
 import { ApiError, ensureLoggedIn, handleApiError } from "@/lib/utils/server-utils"
 import { apiInputFromSchema } from "@/types"
-import { logger } from "@elan/lib"
-import { Prisma } from "@prisma/client"
 
 // ===== CREATE TASK =====
 
@@ -173,7 +171,23 @@ export const updateTask = async ({ input, ctx: { session } }: apiInputFromSchema
       },
     })
 
-    const data: z.infer<ReturnType<typeof updateTaskResponseSchema>> = { task }
+    // Créer une notification pour l'assigné (si différent de l'utilisateur actuel)
+    let notificationSent = false
+    if (task.assigneeId && task.assigneeId !== session.user.id) {
+      await prisma.notification.create({
+        data: {
+          type: "TASK_UPDATED",
+          title: "Tâche mise à jour",
+          message: `La tâche "${task.title}" a été mise à jour`,
+          userId: task.assigneeId,
+          taskId: id,
+          projectId: existingTask.projectId,
+        },
+      })
+      notificationSent = true
+    }
+
+    const data: z.infer<ReturnType<typeof updateTaskResponseSchema>> = { notificationSent, task }
     return data
   } catch (error: unknown) {
     return handleApiError(error)
@@ -264,7 +278,7 @@ export const assignTask = async ({ input, ctx: { session } }: apiInputFromSchema
       })
 
       if (!isMember) {
-        return ApiError("userNotMember")
+        return ApiError("unknownError") // "userNotMember"
       }
     }
 
@@ -286,7 +300,23 @@ export const assignTask = async ({ input, ctx: { session } }: apiInputFromSchema
       },
     })
 
-    const data: z.infer<ReturnType<typeof assignTaskResponseSchema>> = { success: true, task }
+    // Créer une notification pour l'assigné (si différent de l'utilisateur actuel)
+    let notificationSent = false
+    if (assigneeId && assigneeId !== session.user.id) {
+      await prisma.notification.create({
+        data: {
+          type: "TASK_ASSIGNED",
+          title: "Tâche assignée",
+          message: `Vous avez été assigné à la tâche "${task.title}"`,
+          userId: assigneeId,
+          taskId: taskId,
+          projectId: existingTask.projectId,
+        },
+      })
+      notificationSent = true
+    }
+
+    const data: z.infer<ReturnType<typeof assignTaskResponseSchema>> = { success: true, notificationSent, task }
     return data
   } catch (error: unknown) {
     return handleApiError(error)

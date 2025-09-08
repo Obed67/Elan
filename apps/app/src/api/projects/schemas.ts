@@ -101,6 +101,7 @@ export const updateProjectSchema = (dictionary?: TDictionary<typeof updateProjec
 
 export const updateProjectResponseSchema = () =>
   z.object({
+    notificationsSent: z.number(),
     project: z.object({
       id: z.string(),
       name: z.string(),
@@ -302,6 +303,7 @@ export const inviteUserSchema = (dictionary?: TDictionary<typeof inviteUserSchem
 export const inviteUserResponseSchema = () =>
   z.object({
     success: z.boolean(),
+    notificationSent: z.boolean(),
     member: z.object({
       id: z.string(),
       role: z.enum(["OWNER", "ADMIN", "MEMBER"]),

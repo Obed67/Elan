@@ -61,7 +61,27 @@
     "userNotMember": "L'utilisateur n'est pas membre de ce projet.",
     "cannotRemoveOwner": "Impossible de supprimer le propriétaire du projet.",
     "cannotModifyOwner": "Impossible de modifier le rôle du propriétaire.",
-    "taskNotFound": "Tâche non trouvée."
+    "taskNotFound": "Tâche non trouvée.",
+    "commentContent": {
+      "required": "Le contenu du commentaire est requis",
+      "min1": "Le contenu du commentaire doit contenir au moins 1 caractère",
+      "max2000": "Le contenu du commentaire ne peut pas dépasser 2000 caractères"
+    },
+    "commentNotFound": "Commentaire non trouvé",
+    "unauthorizedCommentAccess": "Accès non autorisé au commentaire",
+    "unauthorizedTaskAccess": "Accès non autorisé à la tâche",
+    "notificationTitle": {
+      "required": "Le titre de la notification est requis",
+      "min1": "Le titre de la notification doit contenir au moins 1 caractère",
+      "max100": "Le titre de la notification ne peut pas dépasser 100 caractères"
+    },
+    "notificationMessage": {
+      "required": "Le message de la notification est requis",
+      "min1": "Le message de la notification doit contenir au moins 1 caractère",
+      "max500": "Le message de la notification ne peut pas dépasser 500 caractères"
+    },
+    "notificationNotFound": "Notification non trouvée",
+    "unauthorizedNotificationAccess": "Accès non autorisé à la notification"
   },
   "home": "Accueil",
   "homePage": {

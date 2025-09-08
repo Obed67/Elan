@@ -91,7 +91,30 @@ export const updateProject = async ({ input, ctx: { session } }: apiInputFromSch
       },
     })
 
-    const data: z.infer<ReturnType<typeof updateProjectResponseSchema>> = { project }
+    // Créer une notification pour tous les membres du projet (sauf le propriétaire)
+    const members = await prisma.projectMember.findMany({
+      where: {
+        projectId: id,
+        userId: { not: session.user.id },
+      },
+      select: { userId: true },
+    })
+
+    let notificationsSent = 0
+    if (members.length > 0) {
+      await prisma.notification.createMany({
+        data: members.map((member) => ({
+          type: "PROJECT_UPDATED",
+          title: "Projet mis à jour",
+          message: `Le projet "${project.name}" a été mis à jour`,
+          userId: member.userId,
+          projectId: id,
+        })),
+      })
+      notificationsSent = members.length
+    }
+
+    const data: z.infer<ReturnType<typeof updateProjectResponseSchema>> = { notificationsSent, project }
     return data
   } catch (error: unknown) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
@@ -204,10 +227,20 @@ export const inviteUser = async ({ input, ctx: { session } }: apiInputFromSchema
       },
     })
 
-    // TODO: Envoyer une notification à l'utilisateur invité
+    // Créer une notification pour l'utilisateur invité
+    await prisma.notification.create({
+      data: {
+        type: "PROJECT_INVITED",
+        title: "Invitation au projet",
+        message: `Vous avez été invité au projet "${project.name}"`,
+        userId: userToInvite.id,
+        projectId: projectId,
+      },
+    })
+
     logger.info(`User ${userToInvite.email} invited to project ${project.name}`)
 
-    const data: z.infer<ReturnType<typeof inviteUserResponseSchema>> = { success: true, member }
+    const data: z.infer<ReturnType<typeof inviteUserResponseSchema>> = { success: true, notificationSent: true, member }
     return data
   } catch (error: unknown) {
     return handleApiError(error)

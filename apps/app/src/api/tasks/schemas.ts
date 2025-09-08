@@ -115,6 +115,7 @@ export const updateTaskSchema = (dictionary?: TDictionary<typeof updateTaskSchem
 
 export const updateTaskResponseSchema = () =>
   z.object({
+    notificationSent: z.boolean(),
     task: z.object({
       id: z.string(),
       title: z.string(),
@@ -317,6 +318,7 @@ export const assignTaskSchema = () =>
 export const assignTaskResponseSchema = () =>
   z.object({
     success: z.boolean(),
+    notificationSent: z.boolean(),
     task: z.object({
       id: z.string(),
       assigneeId: z.string().nullable(),

@@ -61,7 +61,27 @@
     "userNotMember": "User is not a member of this project.",
     "cannotRemoveOwner": "Cannot remove the project owner.",
     "cannotModifyOwner": "Cannot modify the project owner's role.",
-    "taskNotFound": "Task not found."
+    "taskNotFound": "Task not found.",
+    "commentContent": {
+      "required": "Comment content is required",
+      "min1": "Comment content must contain at least 1 character",
+      "max2000": "Comment content cannot exceed 2000 characters"
+    },
+    "commentNotFound": "Comment not found",
+    "unauthorizedCommentAccess": "Unauthorized access to comment",
+    "unauthorizedTaskAccess": "Unauthorized access to task",
+    "notificationTitle": {
+      "required": "Notification title is required",
+      "min1": "Notification title must contain at least 1 character",
+      "max100": "Notification title cannot exceed 100 characters"
+    },
+    "notificationMessage": {
+      "required": "Notification message is required",
+      "min1": "Notification message must contain at least 1 character",
+      "max500": "Notification message cannot exceed 500 characters"
+    },
+    "notificationNotFound": "Notification not found",
+    "unauthorizedNotificationAccess": "Unauthorized access to notification"
   },
   "home": "Home",
   "homePage": {
