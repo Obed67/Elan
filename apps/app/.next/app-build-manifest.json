@@ -41,6 +41,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[lang]/(protected)/layout.js"
+    ],
+    "/[lang]/(sys-auth)/sign-in/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lang]/(sys-auth)/sign-in/page.js"
+    ],
+    "/[lang]/(sys-auth)/sign-in/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lang]/(sys-auth)/sign-in/layout.js"
     ]
   }
 }
